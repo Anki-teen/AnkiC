@@ -1,0 +1,3181 @@
+学习C PRIMER PLUS指南
+
+.将它所列的每个程序清单都敲下来，
+.备注只要看，做笔记就好了
+.将课后习题滚上几遍
+.不懂就查书，看百度
+
+
+
+*第一章*
+
+/*1.1*/
+#include<stdio.h>
+int main(void)
+{
+int dogs;
+
+printf("How many dogs are \
+you has.\n");
+scanf("%d",&dogs);
+printf(
+"So you have %d dog(s)",
+dogs);
+return 0;
+}
+
+
+/*1.2*/
+#include<stdio.h>
+int main(void)
+{
+printf("Concrete contains gravel and cemment");
+return 0;
+}
+
+//复习题
+1.对编程而言，可移植性意味着什么
+完美的可移植性程序是，其源代码无需修改就能在不同的计算机系统中成功编译 
+针对特别硬件设备写的程序往往是不可移植的
+很多操作系统如UNIX Linux 将C编译器自带到软件包中
+
+2.解释源代码文件，目标代码文件，可执行文件有什么区别
+源代码文件包含程序员使用的任何编程语言编写的代码。目标代码文件包含机器语言代码，它
+不必是完整的程序代码。可执行文件包含组成可执行程序的完整机器语言代码。 
+
+3.编程的七个主要步骤是什么
+（1）定义程序目的（2）设计程序（3）编写程序（4）编译程序（5）运行程序
+（6）测试与调试程序 （7）维护和修改程序 
+
+4.编译器的任务是什么
+编译器先预编译,检测错误,然后运行链接器,把源程序翻译成等价的特定的机器语言代码（也叫目标代码） 
+
+5.链接器的任务是什么
+链接器将编译器翻译好的源程序代码链接上C库函数,启动代码与库代码
+
+6.C语言的特性是什么
+C语言强大而灵活,程序紧凑,而语法限制颇多,又因诸多版本的标准与编译器实现的差异
+学起来真是令人头痛
+C语言的灵魂在于指针
+由于这些特性,造就了它成为嵌入式或操作系统开发的不二之选
+
+
+**第二章**
+
+/*2.1*/
+#include<stdio.h>
+int main(void){
+	int num;
+	num=1;
+	printf("i am a simple ");
+	printf("a computer.\n");
+	printf("My favorite number");
+	printf("is %d.Because it is first.",num);
+	return 0;}
+
+
+/*2.2*/
+#include<stdio.h>
+int main(void){
+	int feet,fathoms;
+	fathoms = 2;
+	feet = 6*fathoms;
+	printf("There are %d feet"
+	"in %d fathoms!\n",6*fathoms);
+	return 0;}
+
+
+/*2.3*/
+#include<stdio.h>
+void butler(void);
+int main(void){
+	printf("i will summon"
+	"the bulter function.\n");
+	butler();
+	printf("yes.bring me some"
+	"tea and writeable"
+	"cd-roms.\n");
+	return 0;}
+
+void butler(void){
+printf("you rang,sir?\n");
+}
+
+==
+
+#include<stdio.h>
+void butler(void){
+	printf("you rang,sir?\n");}
+
+int main(void){
+	printf("i will summon"
+	"the bulter function.\n");
+	butler();
+	printf("yes.bring me some"
+	"tea and writeable"
+	"cd-roms.\n");
+	return 0;}
+
+
+/*2.4*/
+nogood.c
+#include <stdio.h>
+int main(void){
+	int n,int n2,int n3;
+/*	int n;
+	int n2;
+	int n3;
+*/
+
+	n=5;
+	n2=n*n;
+	n3=n2*n2;
+//n3=n2*n
+
+	printf("n=%d, n squared = %d, cubed = %d",n,n2,n3);
+	return 0;}
+
+
+/*2.5*/
+#include <stdio.h>
+int main(void)
+{
+	int n,n2,n3;
+
+	n =5;
+	n2=n * n;
+	n3=n * n2;
+	printf("n=%d,n squared=%d,n \
+cubed=%d\n",n,n2,n3);
+	return 0;}
+
+
+//复习题
+
+.C语言的基本模块是什么
+.什么是语法错误？写出一个英语例子和一个C语言例子
+.什么是语义错误？写出一个英语例子和一个C语言例子
+
+ 
+//编程练习
+
+
+***第三章***
+
+/*3.1*/
+#include<stdio.h>
+int main(void)
+{
+float weight;
+float value;
+
+printf("Are you worth your weight in platinum?\n");
+printf("let's check it out.\n");}
+printf("please enter your weight in pounds:");
+scanf("%f",&weight);
+value=1700.0*weight*14.5833;
+printf("\nyour weight in platium is worth $%.2f!If ");
+printf("platium prices drop,");
+printf("you are easily worth that.");
+printf("\neat more to maintain your value");
+
+return 0;
+}
+
+
+
+/*3.2*/
+#include<stdio.h>
+int main(void)
+{
+int ten=10;
+int two=2;
+printf("Doing it right.\n");
+printf("%d minus %d is %d\n",
+ten,2,ten-two);
+printf("Doing it wrong.\n");
+printf("%d minus %d is %d\n",
+ten);
+
+return 0;
+}
+
+
+
+/*3.3*/
+#include<stdio.h>
+int main()
+{
+int x=100;
+printf("dec=%d;octal=%o;hex=%x\n",x,x,x);
+printf("dec=%#d;octal=%#o;hex=%#x\n",x,x,x)
+
+return 0;
+}
+//注意此处的%后面的进制转换 
+
+
+
+//%u对应unsigned int 
+
+
+/*3.4*/
+#include<stdio.h>
+int main(void)
+{
+unsigned int un=3000000000;
+short end=200;
+long big=65537;
+long long verybig=12345678908642;
+printf("un=%u and not %d",un,un);
+printf("end=%hd and %d\n",end,end);
+printf("big=%ld and not %hd\n",big,big);
+printf("verybig=%lld and not %ld\n",verybig,verybig);
+
+return 0;
+}
+
+
+
+/*3.5*/
+charcode.c 显示字符的代码编号 
+#include<stdio.h>
+int main()
+{
+char ch;
+
+printf("please enter a character.\n");
+scanf("%c",&ch);
+printf("the code for %c is %d.\n",ch,ch);    
+return 0;
+}
+
+
+
+/*3.6*/
+#include<stdio.h>
+#include<inttypes.h>
+int main()
+{
+int16_t me16;
+me16=4593;
+printf("first,assume int16_t is short: ");
+printf("Instead,use a \"macro\" from inttypes.h:");
+printf("me16=%" PRId16"\n",me16);
+ return 0;
+}
+//重要：多个字符串可以组合成一个字符串 
+
+
+/*3.7*/
+#include<stdio.h>
+
+int main()
+{
+float aboat=32000.0;
+double abet=2.14e9;
+double dip=5.32e-5;
+
+printf("%f can be wrirren %e\n",aboat,aboat);
+printf("%f can be wrirren %e\n",abet,abet);
+printf("%f can be wrirren %e\n",dip,dip); 
+
+return 0;
+}
+//注意这里又增了一个%e/%E
+//注意double与float的异同
+ 
+/*3.8*/
+#include<stdio.h>
+int main(void)
+{
+printf("Type int has a size of %zd bytes\n",sizeof(int));
+printf("Type char has a size of %zd bytes\n",sizeof(char));
+printf("Type long has a size of %zd bytes\n",sizeof(long));
+printf("Type char has a size of %zd bytes\n",
+sizeof(long long));
+printf("Type char has a size of %zd bytes\n",sizeof(double));
+printf("Type char has a size of %zd bytes\n"
+,sizeof(long double));
+return 0;
+} 
+//sizeof()是C语言的内置运算符，以字节为单位给出指定类型的大小 
+
+/*3.9*/
+#include<stdio.h>
+int main()
+{
+int n=4,m=5;
+float f=7.0f;
+float g=8.0f;
+
+printf("%d\n",n,m);//参数过多 
+printf("%d %d %d\n",f);//参数过少 
+printf("%d %f\n",h,g);//值的类型不匹配 
+
+return 0;
+}
+
+
+
+/*3.10*/
+#include<stdio.h>
+int main()
+{
+float salary;
+printf("\aEnter your desired monthly salary: ");
+printf(" $______\b\b\b\b\b\b ");
+scanf("%f",&salary);
+printf("\n\t$%.2f a month is $%.2f a year.",salary,salary*12.0);
+printf("\rGee!\n");
+
+return 0;
+}
+//注意\a,\r,\t,\b的意义 
+
+3.10
+1.
+1.int 
+2.float
+3.char
+4.int
+2.在什么情况下要用long类型变量代替int类型变量？ 
+原因之一：在系统中要表示的数超过了int可表示的范围，这时要用long类型变量
+原因之二：如果要处理更大的值，那么使用一种在所有系统上都保证至少是32位的类型，可
+提高程序的可移植性 
+3. 
+如果要正好获得32位的整数，可以使用int32_t类型。
+如果要获得可存储至少32位整数的最小类型，可以使用int_least_32_t类型
+如果要为32位整数提供最快的计算速度，可以选择int_fast32_t类型 
+4. 
+ 1.char 退格
+ 2.int 
+ 3.float   //X double
+ 4.int 
+ 5.float   //X double 
+5.
+#include<stdio.h>
+int main(void)
+{
+	float g,h;
+	float tax,rate;
+	
+	g = e21;//X e前至少要有一个数字 小数点左右至少一边有数字 
+	tax = rate * g;
+// 少了个 return 0; 
+ } 
+6.
+    常量       类型          转换说明 
+     12        int             %d
+	 0X3       int             %#X
+	 'C'       char			   %c
+	2.34E7     double          %e
+	'\040'     char            %c
+	7.0		   double          %f
+	6L		   long            %ld
+	6.0f       float           %f
+  0x5.b6p12    double          %a
+7.已完成 
+//注意%x %#x %a %o 
+8.已完成 
+9.
+char ch;
+ch = '\r';     //
+ch = 13;       //
+ch = '\015';   //
+ch = '\xd';    //
+/*
+'\r' 回车，回到当前行的行首，而不会换到下一行，如果接着输出的话，
+本行以前的内容会被逐一覆盖；'\n' 换行，就是输入完一行内容后，光标转
+到下一行的起始位置 ，不会回到行首。
+*/
+
+10.已完成
+11.
+\n 换行 
+\\ \ 
+\" " 
+\t 指表字符 
+
+
+
+3.11 
+1.
+#include<stdio.h>
+int main()
+{
+//浮点数上溢 
+float toobig=3.4e38*100.0f;
+//浮点数下溢 
+float tsmall=3.4e-38*100.0f;
+
+
+    printf("%f\n",toobig);
+    printf("%f\n",tsmall);
+    printf("%d %d",i,i+1);
+    return 0;
+}
+
+2.
+#include<stdio.h>
+int main()
+{
+char a=66;
+//或者可以尝试用'\十六进制或八进制'表示 
+printf("%c",a);
+return 0;
+}
+
+3.
+#include<stdio.h>
+int main(void)
+{
+float a;
+scanf("%f",&a);
+printf("The input is %f or %e\n",a,a);
+return(0);
+}
+
+4.
+#include<stdio.h>
+int main(void)
+{
+float a;
+printf("Please input your age:");
+scanf("%f",&a);
+printf("Your age is %e seconds\n",a*3.156E7);
+return(0);
+}
+//e计数法是十进制计数法，而p计数法是十六进制计数法 
+
+5.
+#include<stdio.h>
+int main()
+{
+	int a;
+printf("请你输入你的年龄\n");
+printf("_____\b\b\b\b\b");
+scanf("%d",&a);
+printf("\n即你生而为人已有%f秒",a*3.156e7);
+return 0;
+}
+
+6.
+#include<stdio.h>
+int main()
+{
+float a;
+printf("请你输入水的夸脱数:____\b\b\b\b"); 
+scanf("%f",&a);
+a*=950.0;
+printf("有水分子的数量为%f",a/3.0e-23);
+return 0;
+}
+
+7.
+#include<stdio.h>
+int main(void)
+{
+float a;
+printf("Please input your height in inches:");
+scanf("%f",&a);
+printf("Your height is %fcm.\n",a*2.54);
+return(0);
+}
+8.略 
+
+
+****第四章****
+
+/*4.1*/
+#include<stdio.h>
+#include<string.h>
+#define DENSITY 62.4
+//用C预处理器把字符常量定义 
+
+int main()
+{
+float weight,volume;
+int size,letters;
+char name[40];
+//用数组储存字符串，该数组占用内存中40个连续的字节，每个字节存储一个字符 
+printf("HI,what's your name\n");
+scanf("%s",name);
+//name与&weight都是地址 
+printf("\n %s,what is weight in pounds?",name);
+scanf("\n%f",&weight);
+size=sizeof name;
+
+letters=strlen(name);
+//用strlen函数获取字符串长度 
+volume=weight / DENSITY;
+printf("\nwell,%s,your volume\
+ is %2.2f.\n",name,volume);
+printf("your name has %d\
+ letters.",letters);
+printf("\ni have %d bytes to\
+ store it in.\n",size);
+
+return 0;
+}
+
+
+/*4.2*/
+#include<stdio.h>
+#define PRAISE "What is wrong with you"
+//注意这里的字符串定义中有用双引号括住字符串 
+int main()
+{
+char name[40];
+printf("what is your name?\n");
+scanf("%s",name);
+printf("%s!%s",name,PRAISE);
+return 0;
+}
+//scanf读取字符串的局限性在于它遇到空格或换行符时停止读取
+ 
+
+#include<stdio.h>
+#include<string.h> 
+#define PRAISE "What is wrong with you"
+
+int main(void)
+{
+char name[40];
+
+printf("what is your name?\n");
+scanf("%s",name);
+printf("%s! %s",name,PRAISE);
+printf("your name of %zd lettles occupies %zd memory cells.\n",
+strlen(name),sizeof name);
+//注意下面的printf用法
+printf("the phrase of praise has %zd lettles",
+strlen(PRAISE));
+printf("and occupies %zd memory cells.\n",sizeof PRAISE); 
+
+return 0;
+}
+
+/*4.4*/
+#include<stdio.h>
+#define PI 3.1415926
+int main()
+{
+	float area,cirium,radius;
+	printf("what is the radius of your pizza?\n");
+	scanf("%f",&radius);
+	area = PI *radius* radius;
+	cirium = 2.0 *PI*radius;
+	printf("Your basic pizza parameters are as follows:\n");
+	printf("该披萨的周长为%1.2f,面积为%1.2f"，circum,area);
+	return 0;
+}
+
+
+/*4.5*/
+//
+#include <stdio.h>
+#include<limits.h>//整型限制 
+#include<float.h> //浮点型限制 
+ 
+int main(void)
+{
+	
+printf("Some number limits for this system: \n");
+printf("Biggest int: %d\n",INT_MAX);
+printf("Smallest int: %d\n",INT_MIN);
+printf("One byte = %d bits on this system.\n",CHAR_BIT);
+printf("Larget double: %e\n",DBL_MAX);
+printf("Smallest normal float: %e\n",FLT_MIN);
+
+return 0;
+}
+
+表4.3
+%a		浮点数、十六进制和p计数法 
+%A      浮点数、十六进制和p计数法 
+%c      单个字符 
+%d      有符号十进制整型 
+%e      浮点数，e计数法 
+%E      浮点数，e计数法
+%f      浮点数，十进制计数法
+%g      
+%G
+%i
+%o
+%p
+%s
+%u
+%x
+%X
+%%      打印一个百分号 
+
+/*4.6*/
+#include<stdio.h>
+#define PI 3.1415926
+int main(void)
+{
+	int number;
+	float pies = 12.75
+	int cost   = 7800;
+	
+	printf("The %d contestant ate %f berry pies.\n",number,pies);
+	printf("The value of pi is %f.\n",PI);
+	printf("Farewell! thou art too dear for my possessing,\n");
+	printf("%c%d\n",'$',2*cost);
+	
+	return 0;
+ } 
+ 
+/*4.7*/
+//注意这个用法 
+#include<stdio.h>
+#define PAGES 959
+int main(void)
+{
+printf("*%d*\n",PAGES);
+Printf("*%2d*\n",PAGES);
+printf("*%10d*\n",PAGES);
+printf("*%-10d*\n",PAGES);
+return 0;
+}
+
+/*4.8*/
+//修饰浮点型 
+#include<stdio.h>
+int main(void)
+{
+	const double RENT = 3852.99;
+	
+	printf("*%f*\n",RENT);
+	printf("*%e*\n",RENT);
+	printf("*%4.2f*\n",RENT);
+	printf("*%3.1f*\n",RENT);
+	printf("*%10.3f*\n",RENT);
+	printf("*%10.3f*\n",RENT);
+	printf("*%+4.2f%*\n",RENT);
+	printf("*%010.2f*",RENT);
+ 
+ return 0;
+ } 
+ 
+ /*4.9*/
+ //演示一些格式标记
+ #include<stdio.h>
+ int main(void)
+ {
+ 	printf("%x %X %#x\n",31,31,31);
+ 	printf("**%d**% d**% d**\n",42,42,-42);
+    printf("**%5d**%5.3d**%05d**%05.3d**\n",6,6,6,6);
+    
+    return 0;
+  } 
+  
+  
+ /*4.10*/
+#include<stdio.h>
+#define BLURB "Authentic imitation!"
+int main(void)
+{
+	printf("[%2s]",BLURB);
+    printf("[%24s]",BLURB);
+	printf("[%24.5s]",BLURB);
+	printf("[-24.5s]",BLURB);
+	
+	return 0; 
+}
+
+/*4.11*/
+//一些不匹配的整数转换
+#include<stdio.h>
+#define PAGES 336
+#define WORDS 65618
+int main(void)
+{
+	short num = PAGES;
+	short mnum = -PAGES;
+	printf("nums as short and unsigned short: %hd %hu\n",num,num);
+	printf("-num as short and unsigned short: %hd %hu\n",mnum,mnum);
+	printf("num as int and char:%d %c\n",num,num);
+	printf("WORDS as int,short and char:%d %hd %c",WORDS,WORDS,WORDS);
+	
+	return 0;
+ } 
+ 
+ /*4.12*/
+ //不匹配的浮点型转换
+ #include<stdio.h>
+ int main(void)
+ {
+ 	float n1=3.0;
+ 	double n2=3.0;
+ 	long   n3=2000000000;
+ 	long   n4=1234567890;
+ 	
+ 	printf("%.1e %.1e %.1e %.1e\n",n1,n2,n3,n4);
+ 	printf("%ld %ld \n",n3,n4);
+	printf("%ld %ld %ld %ld",n1,n2,n3,n4); 
+  } 
+ /*4.13*/
+//printf的返回值 
+#include<stdio.h>
+int  main(void)
+{
+	int b=20;
+	int rv;
+	
+	rv = printf("%d F is water's boiling point.\n",b);
+	printf(The printf() function printed %d characters.\n);
+ 
+ return 0;
+ } 
+ 
+ 
+/*4.14*/
+#include<stdio.h>
+int main(void)
+{
+	printf("Here's one way to print a ");
+	printf("long string.\n");
+	printf("Here's another way to print \
+a long string.\n");
+    printf("Here's the newest way to print"
+    "a long string.");
+    return 0;	
+}
+
+
+/*4.15*/
+#include<stdio.h>
+int main()
+{
+	int age;      
+	float assets; //财产 
+	char pet[30];
+	
+	printf("Enter your age,assets,and favorite pet.\n");
+	scanf("%d %f",&age,&assets);
+	scanf("%s",pet);   //把字符串读入数组无需& 
+    printf("%d $%.2f %s\n",age,assets,pet); 
+	return 0;
+}
+
+/*4.16*/
+//printf中的*作用 
+#include<stdio.h> 
+int main(void)
+{
+	unsigned width,precision;
+	int number =256;
+	double weight = 242.5;
+	
+	printf("Enter a field width:\n");
+	scanf("%d",width);
+	printf("The number is:%*d:\n",width,number);
+	printf("Now enter a width and a precision:\n");
+	scanf("%d %d",&width,&precision);
+	printf("Weight = %*.*f\n",width,precision,weight);
+	printf("Done!\n");
+	
+	return 0;
+}
+
+
+/*4.17*/ 
+//scanf中*的作用 
+#include<stdio.h>
+int main(void)
+{
+	int n;
+	printf("Please enter three integers:\n");
+	scanf("%*d %*d %d",&n);
+	
+	return 0;
+}
+
+//4.7
+//4.8
+1.
+#include<stdio.h>
+int main(void)
+{
+    char name[20];	 
+	printf("请输入你的姓名\n")；
+	scanf("%s",name);
+	printf("你好，%s先生",name);
+ } 
+2.
+#include<stdio.h>
+#include<string.h>
+int main(void)
+{
+    char name[20];	 
+	printf("请输入你的姓名\n");
+	scanf("%s",name);
+	int a = 6+strlen(name);
+	printf("\n\"%s\"\n",name);
+	printf("\"%20s\"\n",name);
+	printf("\"%-20s\"\n",name);
+	printf("*%*s*",a,name);
+ } 
+
+3.
+4.
+5.
+6.
+7.
+8.
+
+
+
+
+
+=====第五章===== 
+
+
+======第六章====== 
+/*6.1*/
+#include<stdio.h>
+int main(void)
+{
+long num;
+long sum=0L;
+int status;
+
+printf("please enter an inte\
+ger (q to quit): ");
+status=scanf("%ld",&num);
+while(status==1)
+{    
+sum = sum + num;
+printf("please enter an int\
+eger (q to quit):");
+status = scanf("%ld",&num);
+}
+printf("those intergers sum\
+ to %ld.\n",sum);
+return 0;
+}
+
+
+
+/*6.2*/
+#include<stdio.h>
+int main()
+{
+int n=5;
+while(n<7)
+{
+printf("n=%d\n",n);
+n++;
+printf("Now n=%d\n",n);
+}
+printf("the loop has finished.");
+return 0;
+}
+
+
+
+/*6.3*/
+#include<stdio.h>
+int main(void)
+{
+int n=0;
+
+while(n<3)
+ printf("n is %d\n",n);
+ n++;
+
+printf("that is all.");
+return 0;
+}
+
+
+
+/*6.4*/
+#include<stdio.h>
+int main()
+{
+int n = 0;
+while(n++<3);
+//娉ㄦ剰杩欓噷鐨?; 鏈夊ぇ浣滅敤
+printf("n is %d\n",n);
+printf("that is all.");
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*6.15*/
+//do while 出口条件循环 
+#include<stdio.h>
+int main(void)
+{
+	const int secret_code = 13;
+	int code_entered;
+	do
+	{
+		printf("To enter a number\n");
+		scanf("%d",&code_entered);
+	}while(code_entered!=secret_code);
+	printf("Right!");
+	
+	return 0;
+	
+ } 
+ 
+ /*6.16*/
+ //用while达成do while的效果
+ #include<stdio.h>
+ int main(void)
+ {
+ 	const int secret_code = 13;
+	int code_entered;
+	printf("To enter a number\n");
+	scanf("%d",&code_entered);
+	while(code_entered!=secret_code)
+	{
+		printf("To enter a number\n");
+		scanf("%d",&code_entered);
+	}
+	return 0;
+  } 
+
+
+
+
+
+/*6.17*/
+//使用嵌套循环 
+#include<stdio.h>
+#define ROWS 6
+#define CHARS 10
+int main()
+{
+int row;
+char ch;
+
+for(row = 0;row < ROWS;row++)
+ {
+ for(ch='A';ch<('A'+CHARS);ch++)
+ printf("%c",ch);
+printf("\n");
+ }
+    return 0;
+}
+
+
+
+/*6.18*/
+#include<stdio.h>
+int main(void)
+{
+	const int ROWS  = 6;
+	const int CHARS = 6;
+	int row;
+	char ch;
+	for(row=0;row<ROWS;row++)
+	{for(ch=('A'+row);ch<('A'+CHARS);ch++)
+	printf("%c",ch);
+	pritf("\n"); 
+	}
+	return 0;
+ } 
+
+/*6.19*/
+//使用循环处理数组 
+#include<stdio.h>
+#define SIZE 10
+#define PAR  72
+int main(void)
+{
+	
+int index,score[SIZE];
+int sum = 0;
+float average;
+
+printf("Enter %d golf scores:\n",SIZE);
+for(index = 0;index < SIZE;index++)
+ scanf("%d",&score[index]);
+printf("The scores read in are as follows:\n");
+for(index=0;index<SIZE;index++)
+ printf("%5d",score[index]);
+printf("\n");
+for(index=0;index<SIZE;index++)
+ sum +=score[index];
+ average = (float)sum / SIZE;
+printf("Sum of scores = %d,average =%.2f\n",sum,average);
+printf("%.0f",average-PAR);
+return 0;
+}
+
+/*6.20*/
+#include<stdio.h>
+double power(double n,int p);
+int main(void)
+{
+	double x,xpow;
+	int exp;
+	
+	printf("Enter a number and the positive integer power");
+	printf(" to which\nthe number will be raised. Enter q");
+	printf(" to quit.\n");
+	while(scanf("%lf %d",&x,&exp)==2)
+	{
+		xpow=power(x,exp);
+		printf("%.3g to the power %d is %.5g\n",x,exp,xpow);
+		printf("Enter a pair of number or q to quit.\n");
+		
+	}
+ printf("Hope you enjoyed this power trip --bye!");
+ return 0;
+ } 
+ 
+ double power(double n,int p)
+ {
+ 	double pow = 1;
+ 	int i;
+ 	for(i=1;i<=p;i++)
+ 	pow *= n;
+ 	return pow;
+ }
+ 
+ 
+ 
+ 
+ /*6.15*/
+ 6. 
+ #include<stdio.h>
+#define ROWS 8
+#define LINES 4
+int main(void)
+{
+	int rows=0;
+	int lines =0;
+	for(;lines<=LINES;lines++)
+	{
+		for(rows=0;rows<ROWS;rows++)
+		printf("$");
+		printf("\n");
+	}
+	return 0;
+}
+ 
+/*6.16*/
+
+1.#include<stdio.h>
+double power(double n,int p);
+int main(void)
+{
+  int n; 
+  char zimu[26];
+  for(n=0;n<=25;n++)
+  zimu[n]='a'+n;
+  for(n=0;n<=25;n++)
+  printf("%c ",zimu[n]);
+  return 0;
+}
+
+2.
+#include<stdio.h>
+int main()
+{
+	for(int n =0;n<=4;n++)
+    {
+    	for(int m =0;m<n+1;m++)
+    	printf("$");
+    	printf("\n");
+ } 
+ return 0;
+ }
+ 
+3. 
+#include<stdio.h>
+int main()
+{
+
+	for(int n =0;n<6;n++){
+	for(char m='F';m>='F'-n;m--)
+	printf("%c",m);
+	printf("\n");
+}
+return 0;
+}
+
+4.
+
+5.
+#include<stdio.h>
+int main()
+{
+	char a;
+	char b;
+	
+	while(scanf("%c",&a)==1)
+	{
+		int n=n-65;
+		for(;n>=0;)
+		{
+			for(int c=n;c>0;c--)
+			printf(" ");
+			for(b='A';b<=a-n;b++)
+			printf("%c",b);
+			for(b=a-n-1;b>=65;b--)
+			printf("%c",b);
+			
+			printf("\n");
+			n--;
+		}
+	}
+	return 0;
+ } 
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+#include<stdio.h>
+int main()
+{
+	scanf("%d %d",&i,&m)
+for(;i<=m;i++)
+printf("%3d %3d %-4d\n",i,i*i,i*i*i);
+}
+
+
+=======第七章======= 
+/*7.1*/
+#include<stdio.h>
+int main(void)
+{
+const int FREEZING = 0;
+float temperature;
+int   cold_days    = 0;
+int   all_days     = 0;
+
+printf("Enter the list ");
+printf("of daily low ");
+printf("temperature.\n");
+printf("Use celsius,");
+printf("and enter q to ");
+printf("quit");
+
+  while(scanf("%f",&temperature)==1)
+  {
+
+    all_days++;
+    if(temperature<FREEZING)
+      cold_days++;
+  }
+
+if(all_days != 0;)
+printf("%d days total:");
+printf("%.1f%% were below freezing.\n",
+all_days,100.0*(float)cold_days/all_days);
+
+if(all_days == 0)
+printf("No date entered.");
+
+return 0
+}
+
+/*7.2*/
+#include<stdio.h>
+#define SPACE ' '
+int main(void)
+{
+char ch;  
+ch =getchar();
+while(ch!='\n')
+{
+	if (ch == SPACE)
+          putchar(ch);
+    else putchar(ch + 1);
+	ch=getchar();      
+}
+putchar(ch);
+return 0;
+}
+
+/*7.3*/
+#include<stdio.h>
+#include<ctype.h>
+int main(void)
+{
+	char ch;
+	while((ch=getchar() != '\n'))
+	{
+		if(isalpha(ch))
+		 putchar(ch+1);
+		else
+		 putchar(ch);
+	}
+    putchar(ch);
+    return 0;
+}
+
+/*7.4*/
+#include<stdio.h>
+#define RATE1 0.13230
+#define RATE2 0.15040
+#define RATE3 0.30025
+#define RATE4 0.34025 
+#define BREAK1 360.0
+#define BREAK2 468.0
+#define BREAK3 720.0
+#define BASE1 (RATE1 * BREAK1)
+#define BASE2 (BASE1+(RATE2 * (BREAK2-BREAK1)))
+#define BASE3 (BASE1+BASE2+(RATE3*(BREAK3 - BREAK2)))
+int main(void)
+{
+	double kwh;
+	double bill;
+	
+	printf("Please enter the kwh usesd.\n");
+	scanf("%lf",&kwh);
+	if(kwh<=BREAK1)
+	   bill=RATE1*kwh；
+	else if(kwh<=BREAK2)
+	   bill=BASE1+RATE2 * (kwh-BREAK1);
+	else if(kwh<=BREAK3)
+	   bill=BASE2 + RATE3 * (kwh-BREAK2);
+	     else 
+	   bill=BASE3 + (RATE4*(kwh-BREAK3));
+	   
+	printf("The charge for %.1f kwh is $%1.2f.\n",kwh,bill);  
+	return 0;
+ } 
+ 
+ 
+/*7.5*/
+#include<stdio.h>
+#include<stdbool.h>
+int main(void)
+{
+	unsigned long num;
+	unsigned long div;
+	bool isPrime;
+	
+	printf("Please enter an integer for analysis.");
+	printf("ENTER q to quit,\n");
+	while(scanf("%lu",&num)==1)
+	{
+		for(div=2,isPrime=true;(div*div)<=num;div++)
+		{
+			if(num%div==0)
+			{
+				printf("%lu is divisble by %lu and %lu.",num,div,num/div);
+				else
+				printf("%lu is divisble by %lu",num,div);
+				isPrime = false;
+			}
+		}
+	if(isPrime)
+	printf("%lu is prime.\n",num);
+	printf("Please enter another integer for analysis;");
+	printf("Enter q to quit.\n");
+	}
+	printf("Bye!\n");
+	return 0;
+}
+
+
+
+
+
+/*7.6*/ 
+#include<stdio.h>
+#define PERIOD '.'
+int main()
+{
+	char ch;
+	int charcount = 0;
+	while((ch=getchar())) != PERIOD)
+	{
+		if(ch!='"'&&ch'\'')
+		charcount++;
+	}
+	printf("There are %d non-quote characters.\n",charcount);
+	
+	return 0;
+}
+
+/*7.7*/
+//统计单词的程序 
+#include<stdio.h>
+#include<ctype.h>
+#include<stdbool.h>
+#define STOP '|'
+int main(void)
+{
+	char c;
+	char prev;
+	long n_chars = 0L;
+	int n_words =0;
+	int n_lines = 0;
+	int p_lines = 0;
+	bool inword =false;
+	
+	printf("Enter text to be analyzed(| to stop):\n");
+	prev = '\n';
+	while((c=getchar()) != STOP)
+	{
+		n_chars++;
+		if(c=='\n')n_lines++;
+		if(!isspace(c)&&!inword)
+		{
+			inword=true;
+			n_word++;
+		} 
+		if(isspace(c)&&inword)
+		 inword=false;
+		 prev=c;
+	 } 
+	 if(prev != '\n')
+	 p_line = 1;
+	 printf("characters = %ld, words = %d,lines =%d,",
+	 n_chars,n_words,n_lines);
+	 printf("partial lines = %d\n",p_lines);
+	 return 0;
+ } 
+/*7.8*/
+//使用条件运算符 
+#include<stdio.h>
+#define COVERAGE 350 
+int main(void)
+{
+    int sq_feet;
+    int cans;
+    printf("Enter number of square feet to be painted:\n");
+    while(scanf("%d",&sq_feet)==1)
+    {
+    	cans = sq_feet/COVERAGE;
+    	cans += ((sq_feet % COVERAGE ==0)) ? 0:1;
+    	printf("You need %d %s of paint.\n",cans,cans==1 ? "can":"cans");
+    	printf("Enter next value.(q to quit):\n");    	
+	}
+	return 0;
+}
+
+/*7.8*/ 
+
+
+/*7.9*/
+
+
+
+/*7.10*/ 
+
+/*7.11*/
+#include<stdio.h>
+#include<ctype.h>
+int main(void)
+{
+    char ch;
+
+printf("Give me a letter of the alphabet,and i will give ");
+printf("an animal name\nbeginning with that letter.\n");
+printf("Please type in a letter; type # to end my act.\n");
+
+ while((ch=getchar())!='#')
+ {
+  if('\n'==ch)
+    continue;
+  if(islower(ch))
+    switch(ch)
+    {
+     case 'a':
+        printf("argali,a wild sheep of Asia\n");
+     break;
+     case 'b':
+     	printf("babirusa,a wild pig of Malay");
+     break;
+	 case 'c':
+     	printf("coati,racoonlike mammal.\n");
+     break;
+	 case 'd':
+     	printf("desman,aquatic,molelike critter\n");
+     break;
+	 case 'e':
+	 	printf("echidna,the spiny anteater\n");
+	 break;
+     case 'f':
+	 	printf("fisher,brownish marten\n");
+     break;		    
+     default:
+             printf("That is a stumper!\n");
+    }
+ else
+printf("i recognzie only lowercase letters.\n");
+ while(getchar()!='\n')
+     continue;
+printf("Please type another letter or a #.\n");
+ }
+printf("Bye!\n");
+return 0;
+}
+/*7.12*/ 
+/*7.13*/ 
+
+
+
+
+
+
+
+
+
+===========第十章=========== 
+/*10.1*/
+//打印每月的天数
+#include<stdio.h>
+#define MONTHS 12
+int main()
+{
+	int days[MONTHS]={31,28,31,30,31,30,31,31,30,31,30,31};
+	int index;
+	for(index=0;index<MONTHS;index++)
+	printf("Month %2d has %2d days\n",index+1,days[index]);
+	
+	return 0; 
+ } 
+
+/*10.2*/
+#include<stdio.h>
+#define SIZE 4
+
+int main(void)
+{
+	int no_data[SIZE];
+	int i;
+	
+	printf("%2s%14s\n","i","no_data[i]");
+	for(i=0;i<SIZE;i++)
+	printf("%2d%14d\n",i,no_data[i]);
+	
+	return 0;
+ } 
+
+/*10.3*/
+#include<stdio.h>
+#define SIZE 4
+int main(void)
+{
+	int some_data[SIZE] = {1492,1066};
+	int i;
+	printf("%2s%14s","i","some_data[SIZE]");
+	for(i=0;i<SIZE;i++)
+	printf("%2d%14d\n",i,some_data[i]);
+	
+	return 0;
+}
+
+/*10.4*/
+#include<stdio.h>
+int main()
+{
+	const int days[]={31,28,31,30,31,30,31,31,30,31};
+	int index;
+	
+	for(index=0;index<sizeof days/sizeof days[0];index++)
+	printf("Month %2d has %d days.\n",index+1,days[index]);
+	return 0; 
+}  
+	
+/*10.5*/
+#include<stdio.h>
+#define MONTHS 12
+int main(void){
+	int days[MONTHS] = {31,28,[4]=31,30,31,[1]=29};
+	int i;
+	
+	for(i=0;i<12;i++){
+		printf("%2d  %d\n",i+1,days[i]);
+	}
+} 
+
+/*10.6*/
+#include<stdio.h>
+#define SIZE 4
+int main(void){
+	int value1 = 44;
+	int arr[SIZE];
+	int value2 = 88;
+	int i;
+	
+	printf("value1 = %d,value2 = %d\n",value1,value2);
+	for(i = -1;i<=SIZE;i++){
+		arr[i] = 2*i+1;
+	
+	for(i = -1;i<7;i++){
+		printf("%2d %d\n",i,arr[i]);
+	} 
+	
+	printf("value1 = %d,value2 = %d\n",value1,value2);
+	printf("address of arr[-1]: %p\n",&arr[-1]);
+	printf("address of arr[4]: %p\n",&arr[4]);
+	printf("address of value1: %p\n",&value1);
+	printf("address of value2: %p\n",&value2);
+	}
+}
+
+/*10.7*/
+#include<stdio.h>
+#define MONTHS 12
+#define YEARS  5
+int main(void){
+	const float rain[YEARS][MONTHS]=
+	{
+		{4.3,4.3,4.3,3.0,2.0,1.2,0.2,0.2,0.4,2.4,3.6,6.6},
+		{8.5,8.2,1.2,1.6,2.4,0.0,5.2,0.9,0.3,0.9,1.4,7.3}, 
+		{7.2,9.9,8.4,3.3,1.2,0.8,0.4,0.0,0.6,1.7,4.3,6.2},
+		{7.6,5.6,3.8,2.8,3.8,0.2,0.0,0.0,0.0,1.3,2.6,5.2}
+		 };
+int year,month;
+float subtot,total;
+
+printf(" YEAR     RAINFUL    (inches)\n");
+    for(year = 0,total = 0;year <YEARS;year++){
+    	for(month = 0,subtot = 0;month <MONTHS;months++)
+    	subtot += rain[year][month];
+    	printf("%5d %15.1f\n",2010+year,subtot);
+    	total += subtot;
+	} 
+printf("\nThe yearly average is %.1f inches.\n\n",total/YEARS);
+printf("MONTHLY AVERAGE:\n\n");
+printf(" Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec\n");
+
+for(month = 0;month <MONTHS;month++){
+	for(year = 0,subtot = 0;year<YEARS;year++)
+	subtot += rain[year][month];
+	printf("%4.1f",subtot/YEARS);
+}
+printf("\n");
+}
+
+/*10.8*/	
+#include<stdio.h>
+#define SIZE 4 
+int main(void){
+	short datas[SIZE];
+	short * pti;
+	short index;
+	double * ptf;
+	
+	pti = dates;
+	ptf = bills;
+	printf("%23s %15s\n","short","double");
+	for(index=0;index<SIZE;index++){
+		printf("pointers + %d：%10p %10p\n",index,pti+index,ptf+index)；
+		return 0; 
+	}
+}
+
+/*10.9*/
+#include<stdio.h>
+#define MONTHS 12
+int main(void){
+	int days[MONTHS]={31,28,31,30,31,30,31,31,30,31,30,31};
+	int index;
+	for(index=0;index<MONTHS;index++)
+	printf("Month %2d has %d days.\n",index+1,
+	*(days+index));
+}
+
+/*10.10*/	
+********important******
+#include<stdio.h>
+#define SIZE 10
+int sum(int ar[],int n);
+int main(void){
+	int marbles[SIZE]={20,10,5,39,4,16,29,26,31,20};
+	long answer;
+	
+	answer = sum(marble,SIZE);
+	printf("The total number of merbles us %d\n",answer);
+	printf("Thw size of merbles is %ld.\n",
+	sizeof marbles);
+	
+}
+
+int sum(int ar[],int n){
+	int i;
+	int total = 0;
+	
+	for(i=0,i<n;i++)
+		total+=ar[i];
+	printf("The size of ar is %zd bytes.\n",sizeof ar);
+    return total;
+}
+
+/*10.11*/
+
+#include<stdio.h>
+#define SIZE 10 
+int sump(int * start,int *end);
+int main(void){
+	int marbles[SIZE] = {20,10,5,39,4,16,19,26,31,20};
+	long answer;
+	answer = sump(marbles,mables+SIZE);
+	printf("The total number of marbles is %ld.\n",answer);
+	
+	return 0;
+}
+int sump(int *start,int *end){
+	int total = 0;
+	while(start < end){
+		total += *start;
+		start++;
+	}
+	return total;
+}
+
+
+/*10.12*/
+#incldue<stdio.h>
+int data[2] = {100,200};
+int moredata[2] = {300,400};
+int main(void){
+	int *p1,*p2,*p3;
+	p1 = p2 = data;
+	p3 = moredata;
+	
+	prinrf("	*p1 = %d, *p2 = %d, *p3 = %d\n",*p1,*p2,*p3);
+	printf("	*p1++ = %d, *++p2 = %d, (*p3)++ = %d\n",*p1++,*++p2,(*p3)++);
+	prinrf("	*p1 = %d, *p2 = %d, *p3 = %d\n",*p1,*p2,*p3);
+	
+	return 0;
+}
+
+
+/*10.13*/
+#include<stdio.h>
+int main(void){
+	int urn[5] = {100,200,300,400,500};
+	int *ptr1,*ptr2,*ptr3;
+	
+	ptr1 = urn;
+	ptr2 = &urn[2];
+	
+	printf("pointer value,dereferenced pointer,pointer address:\n");
+	printf("ptr1 = %p,*ptr1 = %d,&ptr1 = %p\n",ptr1,*ptr1,&ptr1);
+	
+	ptr3 =ptr1 + 4;
+	printf("\nadding an int to a pointer:\n");
+	printf("ptr1 + 4 = %p,*(ptr1 + 4)= %d\n",ptr1+4,*(ptr1 + 4));
+	ptr1++;
+	printf("\nvalues after ptr1++:\n");
+	printf("ptr1 =%p,*ptr1 = %d,&ptr1 = %p\n",ptr1,*ptr1,&ptr1);
+	ptr2--;
+	printf("\nvalues after --ptr2:\n");
+	printf("ptr2 =%p,*ptr2 = %d,&ptr2 = %p\n",ptr2,*ptr2,&ptr2);
+	--ptr1;
+	++ptr2;
+	printf("\nPointers reset to original values:\n");
+	printf("ptr1 = %p,ptr2 = %p\n",ptr1,ptr2);
+	printf("\nsubtracting one pointer from another:\n");
+	printf("ptr2 = %p,ptr1 = %p, ptr2-ptr1 = %td\n",ptr2,ptr1,ptr2-ptr1);
+	printf("\nsubtracting an int from a pointer:\n");
+	printf("ptr3 = %p,ptr3 - 2 = %p",ptr3,ptr3-2);
+	
+	return 0;
+}
+
+
+/*10.14*/
+#include<stdio.h>
+#define SIZE 5
+void show_array(const double ar[],int n);
+void mult_array(double ar[],int n;dpuble mult);
+int main(void){
+	double dip[SIZE] = {20.0,17.66,8.2,15.3,22.22};
+	
+	printf("The original dip array:\n");
+	show_array(dip,SIZE);
+	mult_array(dip,SZIE,2.5);
+	printf("The dip array after calling mult_array():\n");
+	show_array(dip,SIZE);
+	return 0;
+}
+void show_array(const double ar[],int n){
+	int i;
+	for(i=0;i<n;i++){
+		printf("%8.3f",ar[i]);
+	putchar('\n');	
+	
+}	
+void mult_array(double ar[],int n,double mult){
+	int i;
+	for(i=0;i<n;i++)
+		a[i] *= mult;
+}
+
+
+/*10.15*/
+#include<stdio.h>
+int main(void){
+	int zippo[4][2] = {{2,4},{6,8},{1,3},{5,7}};
+	
+	printf("	zippo = %p,	zippo+1 = %p\n",zippo,zippo+1);
+	printf("zippo[0] = %p,zippo[0]+1 = %p\n",zippo[0],zippo[0]+1);
+	
+	printf("   *zippo = %p,	*zippo+1 = %p\n",*zippo,*zippo+1);
+	printf("    zippo[0][0] = %d\n",zippo[0][0]);
+	
+	printf("   *zippo = %d\n",*zippo[0]);
+	printf("  **zippo = %d\n",**zippo);
+	
+	printf("	zippo[2][1]= %d\n",zippo[2][1]);
+	printf("*(*(zippo+2)+1 = %d\n",*(*(zippo+2)+1);
+	
+	return 0;
+}
+
+
+/*10.16*/
+#include<stdio.h>
+int main(void){
+	int zippo[4][2] = {{2,4},{6,8},{1,3},{5,7}};
+	int (*pz)[2];
+	pz= zippo;
+	printf("	pz = %p,	pz+1=%p\n",pz,pz+1);
+	printf("pz[0]=%p,pz[0]+1=%p\n",pz[0],pz[0]+1);
+	printf("   *pz = %p,   *pz+1=%p\n",*pz,*pz+1);
+	printf("	pz[0][0] = %d",pz[0][0]);
+	printf("   *pz[0] = %d\n",*pz[0]);
+	printf("   **pz = %d\n",**pz);
+	printf("	pz[2][1] = %d\n",pz[2][1]);
+	printf("	*(*(pz+2)+1) = %d",*(*(pz+2)+1));
+	
+	return 0;
+} 
+
+
+/*10.17*/
+
+/*10.18*/
+
+/*10.19*/
+
+
+	
+/***********第十一章***********/
+
+/*11.1*/
+//表示字符串的几种方式 
+#include<stdio.h>
+#define MSG "I am a symbolic string constant"
+#define MAXLENGTH 81
+int main(void){
+	char words[MAXLENGTH]="I am a string in an array.";
+	const char * pt1 = "Something is point at me";
+/*指针表示法来创建字符串
+  几乎等同
+	const char ar1[] = "Somthing is point at me";
+  这时'ar1'与'pt1'几乎都是该字符串的地址
+	puts("Here are something strings:");
+	puts(words);
+	puts(pt1);
+	words[8] = 'p';
+	puts(words);
+	
+	return 0;
+	}	
+	
+/*    PS
+1.
+char greeting[50]="Hello,and" "how are you"
+" today!";
+==char greeting[50]="Hello,and how are you today!";
+2.
+printf("\"Run, Spot, run!\"exclamed Dick.\n");
+output: "Run, Spot, run! "exclamed Dick.
+
+*/
+
+/*11.2*/
+#include<stdio.h>
+int main(void){
+	printf(" %s %p %c\n","we","are",*"space farers");
+	
+	return 0;
+} 
+
+/*      PS
+1."const"  show not change the array
+2. char car[10]='Tata';
+   car == &car[0], *car == "T"==car[0],*(car+1)==car[1]=='a'
+   
+/*11.3*/ //在字符串中，初始化数组与初始化指针的区别 
+#define MSG "I'm special" 
+#include<stdio.h>
+int main(){
+	char ar[] = MSG;
+	const char *pt = MSG;
+	printf("address of \"I'm special\": %p \n","I'm special");
+	printf("		address ar: %p\n",ar);
+	printf("		address pt: %p\n",pt);
+	printf("		address of MSG: %p\n",MSG);
+	printf("address of \"I'm special\": %p \n","I'm special");  
+	
+	return 0;
+}
+
+/*11.4*/ 
+#include<stdio.h>
+#define SLEN 40
+#define LIM 5
+int main(void){
+	const char *mytalents[LIM]={
+		"Adding numbers switfly",
+		"Multiplying accurately","Stashing data",
+		"Following instructins to the letter",
+		"Understanging the C language"};
+	char yourtalents[LIM][SLEN]={"Walking in a straight line",
+		"Sleeping","Watching television","Mailing letters","Reading email"};
+	int i;
+	puts("Let's compare talents.");
+	printf("%-36s %-25s\n","My Talents","Your Talents");
+	for(i=0;i<LIM;i++)
+		printf("%-36s %-25s\n",mytalents[i],yourtalents[i]);
+	printf("\n sizeof mytalents: %zd,sizeof yourtalents: %zd\n",sizeof(mytalents),sizeof(yourtalents));
+
+	return 0;
+	}
+
+/*11.5*/ 
+#include<stdio.h>
+int main(void){
+	const char *mesg="Don't be a fool!";
+	const char *copy;
+
+	copy=mesg;
+	printf("%s\n",mesg);
+	printf("mesg = %s; &mesg = %p;value = %p\n",mesg,&mesg,mesg);
+        printf("copy = %s; &mesg = %p;value = %p\n",copy,&copy,copy);
+	return 0;
+}	
+
+/*11.6*/ 
+#include<stdio.h>
+#define STLEN 81
+int main(void){
+	char words[STLEN];
+
+	puts("Enter a string,please.");
+	fgets(words,STLEN,stdin);
+	printf("Your string twice:\n");
+	printf("%s\n",words);
+	puts(words);
+	puts("Done");
+	return 0;
+}
+
+
+/*11.7*/
+#include<stdio.h>
+#define STLEN 14
+int main(void){
+        char words[STLEN];
+        puts("Enter a string,please.");
+        fgets(words,STLEN,stdin);
+        printf("Your strings twice(put(),then fputs()):\n");
+        puts(words);
+        fputs(words,stdout);
+        puts("Enter another string,please.");
+        fgets(words,STLEN,stdin);
+        printf("Your string twice (puts()),then fputs()):\n");
+        puts(words);
+        fputs(words,stdout);
+        puts("Done.");
+        return 0;}
+        
+/*11.8*/
+#include<stdio.h>
+#define STLEN 10
+int main(void){
+	char words[STLEN];
+	puts("Enter strings (empty line to quit:)");
+	while(fgets(words,8,stdin)!=NULL && words[0]!='\n')
+		fputs(words,stdout);
+	puts("Done.");
+	return 0;
+	}
+
+/*11.9*/
+
+#include<stdio.h>
+#define STLEN 10
+int main(void){
+	char words[STLEN];
+	int i;
+	puts("Enter strings (empty line to quit):");
+	while(fgets(words,STLEN,stdin)!=NULL &&words[0]!='\n')
+	{
+		i=0;
+		while(words[i]!='\n'&&words[i]!='\0')
+			i++;
+		if(words[i]=='\n')
+			words[i]='\0';
+		else 
+		while (getchar()!='\n')continue;
+		puts(words);}
+	puts("done");
+	return 0;}
+
+
+/*11.10*/
+char * s_gets(char *st,int n){
+	char * ret_val;
+	int i=0;
+	ret_val=fgets(st,n,stdin);
+	if(ret_val){
+		while(st[i]!='\n'&&st[i]!='\0')
+		i++;
+	if(st[i]=='\n')
+		st[i]=='\0';
+		else while(getchar()!='\n')
+		continue;
+	}
+	return ret_val;
+	} 
+} 
+
+/*11.11*/
+#include<stdio.h>
+int main(void){
+	char name1[11],name2[11];
+	int count;
+
+	printf("Please enter 2 names.\n");
+	count = scanf("%5s %10s",name1,name2);
+	printf("I read the %d names %s and %s.\n",count,name1,name2);
+	return 0;}
+
+/*11.12*/
+#include<stdio.h>
+#define DEF "I am a #define string"
+int main(void){
+	char str1[80] = "An array was initialized to me.";
+	const char * str2 = "A pointer was initialized to me.";
+	puts("I'm an argument to puts().");
+	puts(DEf);
+	puts(str1);
+	puts(str2);
+	puts(&str1[5]);
+	puts(str2+4);
+	return 0;
+}
+
+/*11.13*/
+#include<stdio.h>
+int main(void){
+	char side_a[] = "Side A";
+	char dont[] = { 'W', 'o','W','!'};
+	char side_b[] = "Side B";
+	puts(dont);
+	return 0;}
+
+/*11.14*/
+
+#include<stdio.h>
+void put1(const char string){
+	while (*string != '\0')
+		putchar(*string++);
+}
+
+/*11.15*/
+#include<stdio.h>
+int put2(const char *string){
+	int count = 0;
+	while (* string){
+		putchar(*string++);
+		count++;
+}
+	putchar('\n');
+	return (count);
+}
+
+
+/*11.16*/
+#include<stdio.h>
+void put1(const char *);
+int put2(const char *);
+int main(void){
+	put1("If i'd as much money");
+	put1(" as I could spend,\n");
+	printf("I count %d characters.\n",
+			put2("I never would cry old chairs to mend."));
+	return 0;}
+
+void put1(const char *string){
+	while (*string)
+		putchar(*string++);
+}
+
+int put2(const char *string){
+	int count = 0;
+	while(*string){
+		putchar(*string++);
+		count++;
+		}
+	putchar('\n');
+	return (count);
+}
+
+/*11.17*/
+#include<stdio.h>
+#include<string.h>
+void fit(char *,unsigned int);
+
+int main(void){
+	char mesg[] = "Things should be as simple as possible,"
+					"but not simpler,";
+	puts(mesg);
+	fit(mesg,38);
+	puts(mesg);
+	puts("Let's look at some more of the string.");
+	puts(mesg+39);
+	return 0;}
+
+void fit(char *string,unsigned int size){
+	if (strlen(string) > size)
+		string[size] = '\0';
+}
+
+
+/*11.18*/
+#include<stdio.h>
+#include<string.h>
+#define SIZE 80
+char * s_gets(char *st,int n);
+int mian(void){
+	char flower[SIZE];
+	char addon[]="s smell like old shoes.";
+	puts("What is your favorite flower?");
+	if(s_gets(flower,SIZE)){
+		strcat(flower,addon);
+		puts(flower);
+		puts(addon);
+	}
+	else puts("End of file encountered!");
+	puts("Bye!");
+	return 0;
+}
+
+char *s_gets(char *st,int n){
+	char *ret_val;
+	int i=0;
+	ret_val = fgets(st,n,stdin);
+	if(ret_val){
+		while(st[i]!='\n'&&st[i]!='\0')
+			i++;
+	if(st[i]=='\n')st[i]=='\0';
+		else while(getchar()!='\n')
+			continue;}
+	return ret_val;
+	}
+ 
+/*11.19*/
+#include<stdio.h>
+#include<string.h>
+#define SIZE 30
+#define BUGSIZE 13
+char * s_gets(char * st , int n);
+int main(void){
+	char flowers[SIZE];
+	char addon[] = "s smell old shoes.";
+	char bug[BUGSIZE];
+	int available;
+
+	puts("What is your favorite flower?");
+	s_gets(flower,addon);
+}
+
+char * s_gets(char *st,int n){
+	char * ret_val;
+	int i = 0;
+	ret_vel = fgets(st,n,stdin);
+	if (ret_vel){
+		while (st[i] != '\n' && st[i] != '\0')
+			i++;
+	if(st[i]=='\n')
+		st[i]='\0';
+	else
+			while(getchar()!='\n')
+				continue;
+}
+	return ret_vel;
+}
+
+/*11.20*/
+#include<stdio.h>
+#define ANSWER "GRANT"
+#define SIZE 40
+char * s_gets(char *st,int n);
+
+int main(void){
+	char try[SIZE];
+	puts("Who is buried to Giant's tomb?");
+	s_gets(try,SIZE);
+        while(try!=ANSWER){
+		puts("That's wrong.Try again.");
+		s_gets(try,SIZE);
+	}
+	puts("That's right");
+	return 0;}
+char * s_gets(char *st,int n){
+	char *ret_val;
+	int i=0;
+	ret_val = fgets(st,n,stdin);
+	if(ret_val){
+		while(st[i]!='\n'&&st[i]!='\0')
+			i++;
+		if(st[i]=='\n')i=='\0';
+  		   else 
+			   while(getchar()!='\n')
+				   continue;}
+	return ret_val;}
+
+/*11.21*/
+#include<stdio.h>
+#include<string.h>
+#define SIZE 40
+#define ANSWER "Grant"
+
+char * s_gets(char *st,int n);
+
+int main(void){
+	char try[SIZE];
+	puts("Who is buried in Grant's tomb");
+	s_gets(try,SIZE);
+	while(strcmp(try,ANSWER)){
+		puts("No,that's wrong.Try again.");
+		s_gets(try,SIZE);
+	}
+	puts("That's right!");
+	return 0;}
+
+char *s_gets(char *st,int n){
+	char * ret_val;
+	int i=0;
+	ret_val = fgets(st,n,stdin);
+	if(ret_val){
+		while (st[i]!='\n'&&st[i]!='\0')
+			i++;
+		if(st[i]=='\n')
+			st[i]='\0';
+		else while (getchar()!='\n')
+			continue;}
+	return ret_val;}
+
+/*11.22*/
+#include<stdio.h>
+#include<string.h>
+int main(void){
+	printf("strcmp(\"A\",\"A\"is ");
+	printf("%d\n",strcmp("A","A"));
+
+	printf("strcmp(\"A\",\"B\"is ");
+	printf("%d\n",strcmp("A","B"));
+
+	printf("strcmp(\"B\",\"A\"is ");
+	printf("%d\n",strcmp("B","A"));
+
+	printf("strcmp(\"C\",\"A\"is ");
+	printf("%d\n",strcmp("C","A"));
+
+	printf("strcmp(\"Z\",\"a\"is ");
+	printf("%d\n",strcmp("Z","a"));
+          
+	printf("strcmp(\"apples\",\"apple\"is ");
+	printf("%d\n",strcmp("apples","apple"));
+
+	return 0;}
+
+/*11.23*/
+#include<stdio.h>
+#include<string.h>
+#define SIZE 80
+#define LIM  10
+#define STOP "quit"
+char * s_gets(char * st, int n);
+int main(void){
+	char input[LIM][SIZE];
+	int ct = 0;
+	printf("Enter up to %d lines (type quit to quit):\n",LIM);
+	while(ct < LIM && s_gets(input[ct],SIZE) != NULL &&
+			strcmp(input[ct],STOP) != 0)
+				ct++;
+	printf("%d string entered\n",ct);
+	return 0;
+}
+
+char * s_gets(char * st, int n){
+	char * ret_val;
+	int i = 0;
+	ret_val = fgets(st,n,stdin);
+	if (ret_val){
+		while (st[i] != '\n' && st[i] != '\0')
+			i++;
+		if (st[i]=='\n');
+			 st[i]='\0';
+		else
+			while(getchar()!='\n')
+				continue;
+}
+	return (ret_val);
+}
+
+/*11.24*/
+#include<stdio.h>
+#include<string.h>
+#define LISTSIZE 6
+int main(void){
+	const char * list[LISTSIZE] =
+	{
+		"astronomy","astounding",
+		"astrophysics","ostracize",
+		"asterism","astrophobia"
+	};
+	int count = 0;
+	int i;
+	for (i=0;i<LISTSIZE;i++){
+		if (strcmp(list[i],"astro",5)==0){
+				printf("Found: %s\n",list[i]);
+				count++;}
+	printf("The list contained %d words beginning"
+		   " with astro.\n",count);
+	return 0;
+}
+
+/*11.25*/
+#include<stdio.h>
+#include<string.h>
+#define SIZE 40
+#define LIM  5
+char * s_gets(char *st, int n);
+int main(void){
+	char qwords[LIM][SIZE];
+	char temp[SIZE];
+	int i = 0;
+	printf("Enter %d words beginning with q:\n");
+	while ( i< LIM && s_gets(temp,SIZE)){
+		if (temp[0]!='q')
+			printf("%s doesn't begin with q!\n",temp);
+		else{
+			strcpy("qwords[i],temp");
+			i++;}
+}
+	puts("Here are the words accepted:");
+	for (i=0; i< LIM; i++){
+		puts(qword[i]);
+	return 0;
+}
+char * s_gets(char *st, int n){
+	char * ret_val;
+	int i=0;
+	if (ret_val){
+		while(st[i]!='\n' && st[i] != '\0')
+				i++;
+		if(st[i]=='\n')
+			st[i] = '\0';
+		else
+			while(getchar()!='\n')
+				continue;
+		}
+	return ret_val;
+}
+
+/*11.26*/
+
+/*11.27*/
+
+/*11.28*/
+
+/*11.29*/
+#include<stdio.h>
+#include<string.h>
+#define SIZE 80
+#define LIM  20
+#define HALT ""
+void stsrt(char *strings[], int num);
+char *s_gets(char *st, int n);
+
+int main(void){
+	char input[LIM][SIZE];
+	char *ptstr[LIM];
+	int ct=0;
+	int k;
+
+	printf("Input up to %d lines, and I will sort them.\n",LIM);
+	printf("To stop, press the Enter key at a line's start.\n");
+	while (ct<LIM && s_gets(input[ct],SIZE)!=NULL && input[ct][0]!='\0'){
+	ptstr[ct] = input[ct];
+	ct++;
+}
+	ststr(ptstr,ct);
+	puts("\nHere's the sorted list:\n");
+	for (k=0; k<ct; k++){
+		puts(ptstr[k]);
+	return 0;
+}
+
+void ststr(char *strings[],int num){
+	char *temp;
+	int top,seek;
+	for (top=0;top<num-1;top++)
+		for (seek=top+1; seek<num; seek++)
+			if(strcmp(strings[top],strings[seek])>0){
+				temp=strings[top];
+				strings[top]=strings[seek];
+				strings[seek]=temp;}
+}
+
+char *s_gets(char *st,int n){
+	char * ret_val;
+	int i=0;
+
+	ret_val = fgets(st,n,stdin);
+	if (ret_val){
+	while(st[i] != '\n' && st[i] != '\0')
+		i++;
+	if (st[i]=='\n')
+		st[i]='\0';
+	else
+		while (getchar()!='\n')
+			continue}
+	return ret_val;
+}
+
+
+/*11.30*/
+
+
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#define LIMIT 81
+void ToUpper(char *);
+int PunctCount(const char*);
+
+int main(void){
+	char line[LIMIT];
+	char *find;
+
+	puts("Please enter a line:");
+	fgets(line,LIMIT,stdin);
+	find = strchr(line,'\n');
+	if (find)
+		*find = '\0;;
+	ToUpper(line);
+	puts(line);
+	putsprintf("That line has %d punctuation characters.\n",PunctCount(line));
+	return 0;
+}
+
+void ToUpper(char *str){
+	while(*str){
+	    *str = toupper(*str);
+		str++;
+				}
+}
+
+int PunctCount(const char * str){
+	int ct=0;
+	while(*str){
+		if(ispunct(*str))
+			ct++;
+		str++;}
+	return ct;}
+
+/*11.31*/
+#include<sstdio.h>
+int main(int argc,char *argv[]){
+	int count;
+	printf("The command line has %d arguments:\n",argc-1);
+	for (count=1; count<argc;count++){
+		printf("%d: %s\n",count,argc[count]);
+	printf("\n");}
+	return 0;
+}
+
+
+/*数字与字符串的转换*/
+printf("%d",int);
+scanf("%d",&int);
+
+/*11.32*/
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc,char *argv[]){
+	int i, times;
+	if (argc<2 || (times=atoi(argv[1])) < 1)
+		printf("Usage: %s positive-number\n",argv[0]);
+	else
+		for(i=0; i<times; i++)
+			puts("Hello, good looking!");
+	return 0;
+}
+
+
+
+/*11.33*/
+#include<stdio.h>
+#include<stdlib.h>
+#define LIM 30
+char * s_gets(char *st, int n);
+int main(){
+	char number[LIM];
+	char *end;
+	long value;
+	puts("Enter a number (empty line to quit):");
+
+	while(s_gets(number,LIM) && number[0]!='\0'){
+	value = strtol(number,&end,10);
+	printf("base 10 input, base 10 output: %ld, stopped at %s (%d)\n",
+			value,end,*end);
+	value = strtol(number,&end,16);
+	printf("base 16 input, base 10 output: %ld, stopped at %s (%d)\n",
+			value,end,*end);
+	puts("Next number:");
+};
+	puts("Bye!");
+	return 0;}
+
+char * s_gets(char *st, int n){
+	char * ret_val;
+	int i = 0;
+	ret_val = fgets(st,n,stdin);
+	if (ret_val){
+		while (st[i] != '\0' && st[i]!= '\n')
+			i++;
+		if (st[i]=='\n')
+			st[i]=='\0';
+		else
+			while(getchar()!='\n')
+				continue;}
+	return ret_val;
+}
+
+
+
+
+//复习题//
+1.下面字符串的声明有什么问题？
+	int main(void){
+	char name[]={'F','e','s','s'};
+	......
+}
+答：问题在于没有空字符，在使用过程中不安全
+2.下面的程序会打印什么？
+#include<stdio.h>
+int main(void){
+	char note[]="See you at the snack bar.";
+	char *ptr;
+	ptr=note;
+	puts(ptr);
+//See you at the snack bar.
+	puts(++ptr);
+//ee you at the snack bar.
+	note[7]='\0';
+	puts(note);
+//See you
+	puts(++ptr);
+//e you at the snack bar. 错！ e you
+	return 0;
+}
+
+3.下面的程序会打印什么？
+#include<stdio.h>
+#include<string.h>
+int main(void){
+	char food [] = "Yummy";
+	char *ptr;
+	ptr = food + strlen(food);
+	while (--ptr >= food)
+		puts(ptr);
+	return 0;
+}
+答：
+y
+my
+mmy
+ummy
+Yummy
+
+4.下面的程序要打印什么？
+#include<stdio.h>
+#include<string.h>
+int main(void){
+	char goldwyn[40] = "are of it all ";
+	char samuel[40] = "I read p";
+	const char * quote = "the way through.";
+
+	strcat(goldwyn,quote);
+	strcat(samuel,goldwyn);
+	puts(samuel);
+	return 0;}
+答：I read pare of it all the way through.
+
+5.
+#include<stdio.h>
+
+char *pr(char *str){
+	char *pc;
+	pc = str;
+	while(*pc)
+		putchar(*pc++);
+	do{
+		putchar(*--pc);
+		}while(pc - str);
+	return (pc);}
+
+考虑到下面的函数调用
+	x = pr("Ho Ho Ho!");
+.将打印什么？
+	Ho Ho Ho!!oH oH oH
+.x是什么类型?
+	pr的参数是一个指向字符串的指针，返回值为字符指针，x与它同是 char *
+.x的值是什么？
+	x==str && *x = 'H'
+.表达式*--pc是什么意思？与--*pc有什么不同？
+
+如果用*pc--代替*--pc,会打印什么？
+两个while循环用来测试什么？
+.如果pr函数的参数是空字符串，会怎样?
+	空字符串会使得第一个循环：while(*pc) putchar(*pc++);
+    难以为继，第二个循环又是出口判断，因putchar(*--pc);使得函数一直循环下去
+.如果必须在主调函数中做什么，才能让pr函数正常运行？
+	先声明才能再调用函数，并要先声明 char *x;
+
+.？
+char 类型的变量占用一字节内存，'$'占用了int大小的字节，"$"占用了两字节
+
+.
+#include<stdio.h>
+#include<string.h>
+#define M1 "How are ya, sweetie?"
+char M2[40] = "Bear the clock.";
+char * M3 = "chat";
+int main(void){
+	char words [80];
+	printf(M1);
+//How are ya, sweetie?
+	puts(M1);
+//-How are ya, sweetie?
+	puts(M2);
+//Bear the clock
+	puts(M2+1);
+//ear the clock
+	strcpy(words,M2);
+//words="Bear the clock.
+	strcat(words," Win a toy.");
+//words="Bear the clock. Win a toy.
+	puts(words);
+//...
+	words[4]='\0';
+	puts(words);
+//Bear
+	while (*M3)
+		puts(M3++);
+//chat
+//hat
+//at
+//t
+	puts(--M3);
+//t
+	puts(--M3);
+//at
+	M3 = M1;
+	puts(M3);
+//DEF
+	return 0;
+}
+.#include<stdio.h>
+int main(void){
+	char str1[] = "gawsie";
+	char str2[] = "bletonism";
+	char *ps;
+	int i = 0;
+	for (ps = str1;*ps != '\0';ps++){
+		if (*ps=='a' || *ps =='e')
+			putchar(*ps);
+		else
+			(*ps)--;
+		putchar(*ps);}
+	putchar('\n');
+	while (str2[i] != '\0'){
+		printf("%c", i%3 ? str2[i] : '*');
+		++i;}
+	return 0;}
+
+.
+char * s_gets(char *st, int n){
+	char * ret_val;
+
+	ret_val = fgets(st,n,stdin);
+	if (ret_val){
+		while (*st != '\0' && *st != '\n')
+			st++;
+		if (*st=='\n')
+			*st=='\0';
+		else
+			while(getchar()!='\n')
+				continue;}
+	return ret_val;
+}
+
+.
+int MyStrlen(char *st){
+	int num = 0;
+	for(;*st!='\0';st++)
+		num +=1;
+	return num;
+}
+.
+char * s_gets(char *st, int n){
+	char * ret_val;
+
+	ret_val = fgets(st,n,stdin);
+	if (ret_val){
+		find = strchr(st,'\n');
+		if (find)
+			*find ='\0';
+		else
+			while(getchar()!='\n')
+				continue;}
+	return ret_val;
+}
+.
+char *FinSpa(char * str){
+	for(;*str !='\0';str++)
+		if(*str==' ')
+			break;
+	if(*str=='\0')
+		str = NULL;
+	return str;
+}
+
+
+
+13. 留给以后的自己做
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************第十二章************
+存储类别  存储期    作用域   链接  声明方式
+############################################################# 
+        #        #                                          # 
+ 自动	# 自动   #                                          # 
+############################################################# 
+		#        #                                          # 
+ 寄存器	#        #                                          # 
+############################################################# 
+ 静态外	#        #                                          # 
+ 部链接	#        #                                          # 
+############################################################# 
+ 静态内	#                                                   # 
+ 部链接	#                                                   # 
+############################################################# 
+ 静态	#                                                   # 
+无链接  #                                                   # 
+############################################################# 
+/*12.1*/
+#include<stdio.h>      //靠靠靠?int main(){
+	int x = 30;
+	printf("x in outer block:%d at %p\n",x,&x);
+	{
+		int x =77;
+		printf("x in inner block:%d at %p\n",x,&x);
+	}
+	printf("x in outer block:%d at %p\n",x,&x);
+	while(x++ < 33){
+		int x = 100;
+		x++;
+		printf("x in while loop:%d at %p\n",x,&x);
+	} 
+	printf("x in outer block:%d at %p\n",x,&x);
+	return 0;
+} 
+		?????
+
+
+
+/*12.2*/
+#include<stdio.h>
+int main(){
+	int n = 8;
+	printf(" Initially, n = %d at %p\n",n,&n);
+	for(int n = 1;n<3;n++)
+		printf("		loop 1:n = %d at %p",n,&n);
+	printf("After loop 1,n = %d at %p",n,&n);
+	for(int n = 0;n<3;n++){
+		printf(" loop 2 index n = %d at %p",n,&n);
+		int n = 6;
+		printf("	loop 2: n = %d at %p\n",n,&n);
+		n++;
+	}
+	printf("After loop 2,n = %d at %p\n", n,&n);
+	
+	return 0;
+}
+
+*************第十三章*************
+/*13.1*/
+#include<stdio.h>
+#include<stdlib.h>
+int main(int argc,char *argv[]){
+	int ch;
+	FILE *fp;
+	unsigned long count=0;
+	if(argc != 2){
+	       printf("Usage: %s filename\n",argv[0]);
+	exit(EXIT_FAILURE);}
+	//exit() close opened file and end chengxu
+	//normal end pass 0 or not 0
+	if((fp = fopen(argv[1],"r")) == NULL)
+	{
+	printf("Can't open %s\n",argv[1]);
+	exit(EXIT_FAILURE);
+	}
+	while((ch=getc(fp)) != EOF){
+		putc(ch,stdout);
+		count++;
+	}
+	fclose(fp);
+	printf("File %s has %lu characters\n",argv[1],count);
+
+	return 0;}	
+
+/*13.2*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define LEN 40
+int main(int argc, char* argv[]) {
+	FILE* in, * out;   //two pin pointing file
+	int ch;
+	char name[LEN];  //save file
+	int count = 0;
+
+	if (argc < 2) {
+		fprintf(stderr, "Usage: %s filename\n", argv[0]);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((in = fopen(argv[1], "r")) == NULL) {
+		fprintf(stderr, "I couldn't open the file \"%s\"\n",
+			argv[1]);
+		exit(EXIT_FAILURE);
+	}
+
+	strncpy(name, argv[1], LEN - 5);
+	name[LEN - 5] = '\0';
+	strcat(name, ".red");
+
+	if ((out = fopen(name, "w")) == NULL) {
+		fprintf(stderr, "Can't create output file.\n");
+		exit(3);
+	}
+
+	while ((ch = getc(in)) != EOF)
+		if (count++ % 3 == 0)putc(ch, out);
+	if (fclose(in) != 0 || fclose(out) != 0)
+		fprintf(stderr, "Error in closing files\n");
+
+	return 0;
+}
+
+
+/*13.3*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define MAX 41
+int main(void){
+	FILE *fp;
+	char words[MAX];
+	if ((fp=fopen("wordy","a+"))==NULL){
+		fprintf(stdout,"Can't open \"wordy\" file.\n");
+		exit(EXIT_FAILURE);}
+	puts("Enter words to add to the file; press the #\nkey at the beginning of a line"
+		" to terminate.");
+	while((fscanf(stdin,"%40s",words)==1)&&(words[0]!='#'))
+		fprintf(fp,"%s\n",words);
+	puts("File contents:");
+	rewind(fp);
+	while(fscanf(fp,"%s",words)==1)
+		puts(words);
+	puts("Done");
+	if(fclose(fp)!=0)
+		fprintf(stderr,"Error closing file\n");
+	return 0;
+}
+
+/*13.4*/
+#include<stdio.h>
+#include<stdlib.h>
+#define CNTL_Z '\032'
+#define SLEN 81
+int main(void){
+	char file[SLEN];
+	char ch;
+	FILE *fp;
+	long count
+}
+**************第十四章**************
+
+/*14.1*/
+#include<stdio.h>
+#include<string.h>
+char * s_gets(char *st,int n);
+#define MAXTITL 41
+#define MAXAUTL 31
+struct book{
+	char title[MAXTITL];
+	char author[MAXAUTL];
+	float value;
+};
+
+int main(void)
+{
+	struct book library;
+
+	printf("Please enter the book title.\n");
+	s_gets(library.title, MAXTITL);
+	printf("Now enter the author.\n");
+	s_gets(library.author,MAXAUTL);
+	printf("Now enter the value.\n");
+	scanf("%f",&library.value);
+	printf("%s by %s: $%.2f\n",library.title,library.author,library.value);
+	printf("%s: \"%s\" $(%.2f)\n",library.author,library.title,library.value);
+	printf("Done.\n");
+	return 0;
+}
+
+char * s_gets(char *st,int n){
+	char * ret_val;
+	char * find;
+	
+	ret_val=fgets(st,n,stdin);
+	if(ret_val){
+	find = strchr(st,'\n');
+	if(find)
+	*find = '\0';
+	else while(getchar() != '\n')
+	continue;
+	}
+	return ret_val;}
+
+Addtional:
+#include<stdio.h>
+int main(){
+
+struct book{
+	char title[30];
+	char author[20];
+	float value;};
+	struct book library= { .title="Anne's Dairy",
+	.title="Hello world"};
+	printf("%s",library.title);
+	return 0;}
+
+/*14.2*/
+manybook.c
+#include<stdio.h>
+#include<string.h>
+char * s_gets(char * st, int n);
+#define MAXTITL 40
+#define MAXAUTL 40
+#define MAXBKS 100
+struct book{
+	char title[MAXTITL];
+	char author[MAXAUAL];
+	float value; };
+
+
+int main(void){
+	struct book library[MAXBKS];
+	int count = 0;
+	int index;
+	printf("Please enter the bool title.\n");
+	printf("press [enter] at the start of a line to stop");
+	while(count<MAXBKS && s_gets(library[count].title,MAXTITL)!=NULL && library[count].title[0]!='\0'){
+		printf("Now enter the author.\n");
+		s_gets(library[count].author,MAXAUTL);
+		printf("Now enter the value.\n");
+		scanf("%f", &library[count++].value);
+		while(getchar()!='\n')
+			continue;
+		if(count<MAXBKS)
+			printf("Enter the next title.\n");
+	}
+	if (count>0){
+		printf("Here is the list of your books:\n");
+		for(index=0;index<count;index++)
+			print("%s by %s: $%2.f\n",library[index].title,library[index].author,library[index].value);
+	}
+	else 
+		printf("No books? Too bad.\n");
+	return 0;}
+	
+	char *s_gets(char *st,int n){
+		char * ret_val;
+		char * find;
+		ret_val=fgets(st,n,stdin);
+		if (ret_val){
+			find = strchr(st,'\n');
+			if(find)
+				*find='\0';
+			else 
+				while (getchar() !='\n')
+					continue;}
+		return ret_val;}
+
+/*14.3*/
+#include<stdio.h>
+#define LEN 20
+const char * msg[5] = {
+	"	Thank you for the evening, ",
+	"You certainly prove that a ",
+	"is a special kind of guy. We must get together",
+	"over a delicious ",
+	"and have a few laughts"};
+struct names{
+	char first[LEN];
+	char last[LEN];
+};
+
+struct guy{
+	struct names handle;
+	char favfood[LEN];
+	char job[LEN];
+	float income;};
+
+int main(void){
+	struct guy fellow = {
+	{"Ewen","Villard"};
+	"grilled salmon",
+	"personality coach",
+	68112.00
+};
+	printf("Dear %s, \n\n",fellow.handle.first);
+	printf("%s%s.\n",msgs[0],fellow.handle.first);
+	printf("%s%s\n",msgs[1],fellow.job);
+	printf("%s\n",msgs[2]);
+	printf("%s%s%s",msgs[3],fellow.favfood,msgs[4]);
+	if (fellow.income > 150000.0)
+		puts("!!");
+	else if (fellow.income > 75000.0)
+		puts("!");
+	else
+		puts(".");
+	printf("\n%40s%s\n",",","See you soon.");
+	printf("%40s%s\n",",","Shalala");
+	return 0;
+};
+
+/*14.4*/
+#include<stdio.h>
+#define LEN 20
+
+struct names {
+	char first[LEN];
+	char last[LEN];
+};
+
+struct guy {
+	struct names handle;
+	char favfood[LEN];
+	char job[LEN];
+	float income;
+};
+
+int main(void){
+	struct guy fellow[2] = {
+		{ {"Ewen","Villard"},
+			"grilled salmon",
+			"personality coach",
+			68112.00},
+		{ {"Rodney","Swillbelly"},
+			"tripe","tabloid editor",
+			432400.00}};
+	struct guy * him;
+	printf("address #1: %p #2: %p\n",&fellow[0],&fellow[1]);
+	him = &fellow[0];
+	printf("pointer #1: %p  #2: %p\n",him,him+1);
+	printf("him->income is $%.2f: (*him).income is $%.2f\n",
+			him->income,(*him).income);
+	him++;
+	printf("him->favfood is %s: him->handle.last is %s\n",
+				him->favfood,him->handle.last);
+	return 0;}
+
+
+
+/* sixteeth */
+/*
+C标准不仅描述c语言 还描述如何执行C预处理器，C标准库有哪些函数，并详述这些函数工作原理
+本章将介绍C预处理器和C库
+C预处理器
+字符处理
+将两个物理行换成一个逻辑行
+文本处理
+预处理
+
+16.1*/
+
+#include<stdio.h>
+#define TWO 2
+#define OW "Consistency is the last refuge of the unumagina\
+tive. - Oscar wilde"
+#define FOUR TWO*TWO
+#define PX printf("X is %d.\n",x)
+#define FMT "X is %d.\n"
+
+int main(void){
+    int x = TWO;
+    PX;
+    x = FOUR;
+    printf(FMT,x);
+    printf("%s\n",OW);
+    printf("TWO:OW\n");
+    return 0;
+}
+
+/*16.2*/
+#include<stdio.h>
+#define SQUARE(X) X*X
+#define PR(X) printf("The result is %d.\n",X)
+int main(void)
+{
+    int x = 5;
+    int z;
+    printf("x = %d\n",x);
+    z = SQUARE(x);
+    printf("Evaluating SQUARE(x):");
+    PR(z);
+    z = SQUARE(2);
+	printf("Evaluating SQUARE(2): ");
+	PR(z);
+	printf("Evaluating SQUARE(x+2): ");
+	PR(SQUARE(x + 2))；
+	printf("Evaluating 100/SQUARE(2): ");
+	PR(100/SQUARE(2));
+	printf("x is %d.\n",x);
+	printf("Evaluating SQUARE(++x): ");
+	PR(SQUARE(++x));
+	printf("After incrementing, x is %x.\n",x);
+
+	return 0;
+}
+
+
+/*Seventeeth
+找出正确的数据表示不仅仅是选择一种数据类型，还要考虑必须进行哪些操作
+也就是说，必须确定如何存储数据，并且为数据类型定义有效的操作
+例如 C实现通常把int 类型和指针类型都存储为整数
+但这两种类型的有效操作不相同
+例如两个指针不能相乘，而两个整数可以
+用*解引用指针，但对整数这样做毫无意义
+ADT（抽象数据类型）
+*/
+
+#include<stdio.h>
+#include<string.h>
+#define TSIZE 45
+#define FMAX 5
+
+struct film{
+    char title[TSIZE];
+    int rating;
+};
+
+char * s_gets(char str[], int lim);
+
+int main(void){
+    struct film movies[FMAX];
+    int i = 0;
+    int j;
+
+    puts("Enter first movie title:");
+    while(i<FMAX && s_gets(movies[i].title,TSIZE) != NULL && movies[i].title[0]!='\0')
+    {
+        puts("Enter your rating <0-10>:");
+        scanf("%d",&movies[i++].rating);
+        while(getchar() != '\n')
+            continue;
+        puts("Enter next movie title(empty line to stop):");
+    }
+    if(i==0)
+        printf("NO data entered");
+    else
+        printf("Here is the movie list:\n");
+    for(j=0;j<i;j++)
+        printf("Movie: %s Rating: %d\n",movies[j].title,movies[j].rating);
+    printf("Bye!\n");
+    return 0;
+
+}
+
+char * s_gets(char *st, int n){
+    char * ret_val;
+    char *find;
+    ret_val = fgets(st,n,stdin);
+    if(ret_val){
+        find = strchr(st,'\n');
+        if(find)
+            *find = '\0';
+        else while(getchar()!='\n')
+            continue;
+    }
+    return ret_val;
+}
+
